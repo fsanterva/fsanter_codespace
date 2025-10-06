@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&family=RocknRoll+One&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: #FFD700; /* Gold accent */
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: calc(100% - 100px);
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    height: 60px;
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    color: #FFD700;
+}
+
+.btn, header nav ul li a.btn {
+    background-color: #FFD700;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-nav {
+    background-color: #000;
+    padding: 15px 0;
+    position: sticky;
+    top: 95px; /* Height of header */
+    z-index: 99;
+}
+
+.page-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page-nav li {
+    margin: 0 20px;
+}
+
+.page-nav a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.content-section {
+    padding: 80px 50px;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.feature-card {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background-color: #000;
+    padding: 50px 0 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.footer-social a {
+    margin-left: 20px;
+}
+
+.footer-social svg {
+    height: 24px;
+    width: 24px;
+    fill: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    color: #888;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.animated-text-container {
+    display: inline-block;
+    height: 1.5em; /* Height for one line of text */
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.animated-text-container span {
+    display: block;
+    animation: slide-up 8s infinite;
+    color: #FFD700;
+}
+
+@keyframes slide-up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    60% {
+        transform: translateY(-200%);
+    }
+}
