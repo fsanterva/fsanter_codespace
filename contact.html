@@ -21,7 +21,14 @@
                     </ul>
                 </li>
                 <li><a href="gallery.html">Galerij</a></li>
-                <li><a href="shop.html">Winkel</a></li>
+                <li class="dropdown">
+                    <a href="shop.html">Winkel</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="wendy.html">Wendy</a></li>
+                        <li><a href="tinneke.html">Tinneke</a></li>
+                        <li><a href="inne.html">Inne</a></li>
+                    </ul>
+                </li>
                 <li><a href="murals.html">Muurschilderingen</a></li>
                 <li><a href="events.html">Actiedagen</a></li>
                 <li><a href="contact.html" class="active btn">Contact</a></li>
@@ -46,6 +53,17 @@
                 <li>Openingsuren: ma: gesloten; di – za: 10.00 – 18.00; zon- en feestdagen: gesloten</li>
             </ul>
             <p>(Je kunt makkelijk parkeren in de buurt en er is een bushalte op wandelafstand.)</p>
+
+            <h2>Contactformulier</h2>
+            <form action="mailto:contact@redlockart.be" method="post" enctype="text/plain">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Bericht:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">Verstuur</button>
+            </form>
         </div>
     </section>
 

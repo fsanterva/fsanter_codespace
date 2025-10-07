@@ -21,9 +21,9 @@ Page Structure:
    * Tattoo 
    * Galerij (voor schilderijen + prijzen)
    * Winkel (uitleg over de roots van de zaak/stiefvader)
-   * Artiesten – 1 voor portretten van Wendy
-   * Artiesten: Tinneke Snijders
-   * Artiesten: Inne Mangelschots
+      * Wendy
+      * Tinneke Snijders
+      * Inne Mangelschots
    * Muurschilderingen
    * Actiedagen
    * Contact
@@ -114,7 +114,7 @@ Redlock Art is niet alleen mijn droom, het is ook een eerbetoon aan hem.
  
 
 
-   * The second part of the text with heading ( ODE AAN PATRICK MERTENS (PATJE BLUES) is the one about cu's stepfather. Please use this picture in this section: - pls use part.jpg picture here
+   * The second part of the text with heading ( ODE AAN PATRICK MERTENS (PATJE BLUES) is the one about cu's stepfather. Please use this picture in this section: - pls use part.jpg picture here pls find that picture on all folders and sub folders
 
 
 Page Wendy:
