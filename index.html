@@ -1,263 +1,152 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Claire Dupont – Diététique & Bien‑être à Nantes</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --carte-blanche:#F5F3EA;
-  --primary:#8B8A7A;
-  --accent:#C8C4B4;
-  --muted:#6A6A66;
-  --white:#ffffff;
-  --radius:14px;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--carte-blanche);color:var(--muted);-webkit-font-smoothing:antialiased}
-header.hero{min-height:72vh;background-image:url('hero-placeholder.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative}
-header.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,243,234,0.55),rgba(245,243,234,0.75));backdrop-filter:blur(1px)}
-header .overlay{position:relative;z-index:2;text-align:center;padding:3rem 1rem;max-width:900px}
-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:var(--primary);margin:0 0 0.4rem}
-header p{margin:0 0 1.25rem;font-size:1.05rem;color:var(--muted)}
-.btn-main{display:inline-block;background:var(--primary);color:var(--white);padding:0.9rem 1.4rem;border-radius:999px;text-decoration:none;font-weight:600}
-.container{max-width:1100px;margin:0 auto;padding:2.5rem 1rem}
-.intro{background:transparent;padding:3rem 0}
-.intro p{max-width:900px;margin:0 auto;color:var(--muted);line-height:1.8}
-.services-grid{padding:3rem 0;background:transparent}
-.services-grid h2{text-align:center;color:var(--primary);font-family:'Playfair Display',serif;margin-bottom:1.2rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.service-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(98,92,80,0.08);display:flex;flex-direction:column}
-.service-card img{width:100%;height:180px;object-fit:cover}
-.service-card .card-body{padding:1.25rem;flex:1}
-.service-card h3{margin:0 0 0.5rem;color:var(--primary);font-family:'Playfair Display',serif}
-.service-card p{margin:0 0 1rem;color:var(--muted);font-size:0.95rem}
-.btn{display:inline-block;padding:0.5rem 0.9rem;border-radius:999px;background:transparent;border:1px solid var(--accent);text-decoration:none;color:var(--primary);font-weight:600}
-.about{padding:3rem 0}
-.about-flex{display:flex;gap:2rem;align-items:center}
-.about-img{width:320px;height:320px;object-fit:cover;border-radius:12px;box-shadow:0 8px 30px rgba(100,90,80,0.06)}
-.bio{color:var(--muted);line-height:1.75}
-.contact{padding:3rem 0;text-align:center}
-.contact .btn-main{margin-top:1rem}
-footer{padding:2rem 1rem;text-align:center;color:#8b8b87;font-size:0.95rem}
-.section-title{display:flex;align-items:center;gap:12px;justify-content:center; text-align: center; font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 1.5rem;}
-.section-title small{display:block;color:var(--accent);font-size:0.85rem}
-nav { background: var(--white); padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
-nav ul { display: flex; justify-content: center; list-style: none; margin: 0; padding: 0; }
-nav li { margin: 0 1rem; }
-nav a { text-decoration: none; color: var(--primary); font-weight: 600; }
-/* Responsive */
-@media (max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .about-flex{flex-direction:column}
-  .about-img{width:100%;height:260px}
-}
-@media (max-width:600px){
-  header h1{font-size:26px}
-  .grid{grid-template-columns:1fr}
-  nav ul { flex-wrap: wrap; }
-  nav li { margin: 0.5rem; }
-}
-/* Modal (booking) */
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,10,0.4);z-index:60}
-.modal .card{background:var(--white);padding:1.5rem;border-radius:12px;max-width:560px;width:95%;box-shadow:0 20px 60px rgba(30,25,20,0.18)}
-.field{display:flex;flex-direction:column;margin-bottom:0.75rem}
-.field label{font-size:0.9rem;color:var(--primary);margin-bottom:0.3rem}
-.field input,.field textarea{padding:0.7rem;border:1px solid #e6e4df;border-radius:8px}
-.close-btn{background:transparent;border:0;font-size:1.4rem;position:absolute;top:18px;right:18px;color:#444}
-/* Testimonials / FAQ */
-.testimonials{padding:3rem 0;background:transparent}
-.testimonial{background:var(--white);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(96,90,80,0.05)}
-.faq{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.faq-item{background:var(--white);padding:1rem;border-radius:10px}
-.contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-.contact-info div { background: var(--white); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 6px 20px rgba(98, 92, 80, 0.08); }
-.contact-info h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 1rem; }
-.contact-info p { font-size: 1rem; color: var(--muted); line-height: 1.6; }
-.form-section { background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 6px 20px rgba(98, 92, 80, 0.08); margin-top: 3rem; }
-.form-section input, .form-section textarea { width: 100%; padding: 1rem; margin-bottom: 1.2rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; color: var(--primary); }
-.form-section button { background: var(--primary); color: var(--white); padding: 1rem 1.5rem; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; }
-.form-section button:hover { background: #6A6656; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorglandhuis De Bosheuvel | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#accueil">Accueil</a></li>
-    <li><a href="#dietetique">Diététique & Oligoscan</a></li>
-    <li><a href="#massage">Massages</a></li>
-    <li><a href="#bol-d-air">Bol d’Air Jacquier®</a></li>
-    <li><a href="#services">Autres Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">De Bosheuvel</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Dagindeling.html">Dagindeling</a></li>
+                <li><a href="Waar staan we voor.html">Waar staan we voor</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<section id="accueil">
-  <header class="hero">
-   <div class="overlay">
-     <h1>Un temps pour soi m’aime</h1>
-     <p>Diététique, santé fonctionnelle & massages bien‑être à Nantes</p>
-     <a class="btn-main" href="#services">Découvrir nos soins</a>
-     <a class="btn-main" style="margin-left:12px;background:transparent;color:var(--primary);border:1px solid rgba(0,0,0,0.06)" id="bookBtn">Prendre rendez‑vous</a>
-   </div>
-  </header>
+    <header class="hero" style="background-image: url('img/Home - hero banner image.jpg');">
+        <div class="hero-content">
+            <h1>Zorglandhuis De Bosheuvel</h1>
+            <p>Hier voelt elke dag als thuis, met aandacht, warmte en kleine momenten die tellen.</p>
+        </div>
+    </header>
 
-  <section class="intro container">
-   <h2 style="text-align:center;font-family:'Playfair Display',serif;color:var(--primary)">Claire Dupont – Diététique & Bien‑être en Loire‑Atlantique (Nantes)</h2>
-   <p style="margin-top:16px">Bienvenue sur le site de Claire Dupont, diététicienne‑nutritionniste diplômée d’État et praticienne en santé fonctionnelle à Nantes (Loire‑Atlantique). J’accompagne avec bienveillance chaque personne vers un mieux‑être global grâce à une approche holistique personnalisée, centrée sur la nutrition, le bien‑être et les soins naturels. Passionnée par l’écoute et le partage, je propose un suivi professionnel et humain pour vous aider à retrouver équilibre, vitalité et santé au quotidien. Mon approche globale allie la diététique, la micronutrition et les massages bien‑être pour prendre soin du corps et de l’esprit. Découvrez ci‑dessous mes principales prestations, et n’hésitez pas à me contacter pour toute question ou pour entamer ensemble votre chemin vers le mieux‑être.</p>
-  </section>
+    <section class="intro">
+        <div class="container">
+            <div class="content-grid">
+                <div class="text-block">
+                    <h2>Stap binnen in een Landhuis</h2>
+                    <p>Stap binnen in een Landhuis waar de tijd vertrouwd is, het vertelt een verhaal van een warme, natuurlijk plek waar zorg, rust, de dieren en het samen zijn de dag rustig beginnen. Geen gewone dagbesteding – maar een huis waar elke dag betekenisvol voelt.</p>
+                    <p>Dagbesteding bij Zorglandhuis de Bosheuvel is een uniek Landhuis met een eigen bos met weelderige bospaden en pittoreske zitplekjes. Een mooi en groot dakterras met zicht over het bos en de omgeving. Het unieke Landhuis heeft diverse ruimtes voor verschillende doeleinden, zoals een atelier, een grote zitgelegenheid, creatieve ruimte en een relaxruimte.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/Foto mooie bomen.jpeg" alt="Het bos van De Bosheuvel">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="about container">
-   <div class="about-flex">
-     <img src="claire.jpg" alt="Claire Dupont" class="about-img"/>
-     <div class="bio">
-       <h2 style="font-family:'Playfair Display',serif;color:var(--primary)">Claire Dupont</h2>
-       <p>Diététicienne – Naturopathe (Heilpraktiker) – Massothérapeute, je mets mes compétences au service de votre santé. Mon parcours double (diplôme d’État en diététique et formation en santé fonctionnelle/naturopathie allemande) m’a permis d’acquérir une expertise unique pour vous proposer une prise en charge globale. Convaincue que chaque personne est unique, j’adapte mes conseils à votre histoire, votre rythme et vos besoins spécifiques. J’accorde une importance particulière à la pédagogie : vous expliquer le « pourquoi » de chaque recommandation afin que vous compreniez le fonctionnement de votre corps et deveniez acteur de votre santé. Mon credo : chercher la cause profonde plutôt que masquer le symptôme, avancer en douceur sans régime strict ni frustration, et toujours travailler en complémentarité avec les professionnels de santé si nécessaire.</p>
-       <p style="margin-top:10px"><strong>Au fil des pages de ce site, découvrez ma vision du bien‑être et les outils naturels que je mets à votre disposition. Au plaisir de vous rencontrer et de vous accompagner sur le chemin du mieux‑être !</strong></p>
-       <a class="btn-main" href="#contact" style="margin-top:14px;display:inline-block">Me contacter</a>
-     </div>
-   </div>
-  </section>
+    <section class="section-alt">
+        <div class="container">
+            <div class="content-grid">
+                <div class="image-block">
+                    <img src="img/Foto open haard.jpg" alt="Warme sfeer binnen">
+                </div>
+                <div class="text-block">
+                    <h2>Het magische Landhuis De Bosheuvel</h2>
+                    <p>Stap binnen in een wereld waar tijd even stil lijkt te staan en het zonlicht de dag begroet. Hier voelt elke dag een beetje als thuiskomen, terwijl de geur van bloemen en vers gebakken lekkernijen de lucht vult. In het hart van de natuur, wacht een plek vol warmte en gezelligheid.</p>
+                    <p>Ver weg van de drukte van alledag, verscholen tussen prachtige bomen, ligt Zorglandhuis De Bosheuvel – een plek waar het gewone bijzondere momenten ontmoet. Hier fluisteren de bomen verhalen van oude tijden en van nieuwe herinneringen die elke dag ontstaan.</p>
+                    <p>Binnen wacht een warme, zorgzame en veilige omgeving waar iedereen zichzelf kan zijn. Samen ontdekken we bijzondere momenten, het verzorgen van onze lieve dieren, een wandeling, het creëren van kleurrijke creatieve werken, verhalen vertellen bij het knapperende haardvuur en samen lachen om de kleine wonderen die de dag brengt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="testimonials container">
-   <h2 style="text-align:center;font-family:'Playfair Display',serif;color:var(--primary)">Témoignages</h2>
-   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:18px">
-     <div class="testimonial"><p>« Un accompagnement attentionné et professionnel — j’ai retrouvé de l’énergie et un meilleur sommeil. » <br/><small style="color:var(--accent)">— A. L.</small></p></div>
-     <div class="testimonial"><p>« Les massages Narayana m’ont aidée à lâcher prise émotionnellement. »<br/><small style="color:var(--accent)">— M. P.</small></p></div>
-     <div class="testimonial"><p>« Le Bol d’Air m’a redonné de la vitalité après une période de fatigue. »<br/><small style="color:var(--accent)">— S. R.</small></p></div>
-   </div>
-  </section>
+    <section>
+        <div class="container">
+            <h2 style="text-align: center;">Onze Dagbesteding</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">De Bosheuvel heeft verschillende vormen van dagbesteding: belevingsgericht, arbeidsgericht en ontwikkelingsgericht. Wij bieden aan maximaal 12 deelnemers verschillende vormen van dagbesteding aan.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Belevingsgericht</h3>
+                    <p>Creatief bezig zijn, muziek maken of het borstelen van een pony. Gericht op beleving en plezier.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Arbeidsgericht</h3>
+                    <p>Meehelpen om handgemaakte unieke producten klaar te maken voor de webshop, gemaakt door de talenten van de Bosheuvel.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Ontwikkelingsgericht</h3>
+                    <p>Vaardigheden aanleren zoals zelfstandigheid, sociale vaardigheden, koken en bakken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="container" style="padding-top:2.5rem">
-   <h2 style="text-align:center;font-family:'Playfair Display',serif;color:var(--primary)">FAQ</h2>
-   <div class="faq" style="margin-top:18px">
-     <div class="faq-item"><h4>Qu’est‑ce que l’Oligoscan ?</h4><p>L’Oligoscan est un appareil d’analyse minérale qui permet d’évaluer l’état des oligo‑éléments et métaux lourds en quelques minutes, afin d’ajuster le plan de micronutrition.</p></div>
-     <div class="faq-item"><h4>Faut‑il une prescription médicale ?</h4><p>Non, la plupart des prestations se font sans prescription, mais je travaille en collaboration avec les professionnels de santé si nécessaire.</p></div>
-   </div>
-  </section>
-</section>
+    <section class="section-alt">
+        <div class="container">
+            <div class="content-grid">
+                <div class="text-block">
+                    <h2>Voor wie wij er zijn</h2>
+                    <p>Zorglandhuis De Bosheuvel is er voor iedereen die zich goed voelt bij wat extra aandacht en begeleiding in een kleinschalige, vertrouwde omgeving. Of dat nu komt door een neurocognitieve stoornis (ouderen, NAH), psychische aandoening, beperking of omdat het thuis soms te stil is.</p>
+                    <p>Onze doelgroep heeft baat bij rust, structuur en regelmaat. Een belangrijk aspect is kwaliteit in menselijk contact, zelf kunnen ervaren en ontdekken en als mens gezien worden. Bij ons mag je er zijn, precies zoals je bent.</p>
+                    <p>Wij richten ons op deelnemers met Wmo, Wlz, Pgb of Zin voorzieningen.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/Zorg creatieve foto 1.jpg" alt="Creatieve activiteiten">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="dietetique" class="services-grid container">
- <h2>Diététique & Oligoscan</h2>
- <div class="grid" style="margin-top:18px; grid-template-columns: 1fr;">
-   <div class="service-card"><img src="image-diet.jpg" alt="Diététique & Oligoscan"/><div class="card-body"><h3>Diététique & Oligoscan</h3><p>Un accompagnement nutritionnel sur‑mesure pour retrouver une alimentation équilibrée et adaptée à vos besoins. Lors du bilan diététique, j’évalue vos habitudes de vie, vos objectifs santé et votre fonctionnement digestif afin de vous proposer des conseils personnalisés en nutrition et micronutrition. Grâce à l’Oligoscan, un outil innovant d’analyse minérale, nous réalisons sur place un bilan instantané de vos oligo‑éléments et métaux lourds afin d’ajuster précisément votre programme.</p></div></div>
- </div>
-</section>
+    <section>
+        <div class="container">
+            <h2>Onze Doelen</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Maatschappelijk</h3>
+                    <p>Sociale uitsluiting tegengaan door zinvolle daginvulling en deelname aan de samenleving.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Persoonlijk</h3>
+                    <p>Een veilige plek waar je kunt groeien in eigen tempo, talenten ontdekt en plezier beleeft.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Zorggericht</h3>
+                    <p>Behouden of vergroten van vaardigheden, zelfredzaamheid en stabiliteit, zowel fysiek als mentaal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="massage" class="services-grid container">
- <h2>Massages bien‑être</h2>
- <div class="grid" style="margin-top:18px; grid-template-columns: 1fr;">
-   <div class="service-card"><img src="image-massage.jpg" alt="Massages bien‑être"/><div class="card-body"><h3>Massages bien‑être</h3><p>Offrez‑vous un moment de détente profonde avec mes massages ayurvédiques. Le massage Narayana, enveloppant et relaxant, harmonise vos énergies féminines et libère les tensions émotionnelles, tandis que le soin Chi Nei Tsang se concentre sur le ventre pour dénouer les nœuds énergétiques internes et apaiser le “deuxième cerveau” qu’est votre intestin. Ces massages allient douceur et efficacité pour un bien‑être physique et mental durable.</p></div></div>
- </div>
-</section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Zorglandhuis De Bosheuvel</h3>
+                    <p>Een plek waar zorg voelt als thuiskomen. Midden in de natuur, met aandacht voor mens en dier.</p>
+                </div>
+                <div>
+                    <h3>Navigatie</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="Dagindeling.html" style="color: white; text-decoration: none;">Dagindeling</a></li>
+                        <li><a href="Waar staan we voor.html" style="color: white; text-decoration: none;">Waar staan we voor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Hauwert, Nederland</p>
+                    <p>Volg ons voor de kleine wonderen van elke dag.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+                <p>&copy; 2026 Zorglandhuis De Bosheuvel. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
 
-<section id="bol-d-air" class="services-grid container">
-  <h2 class="section-title">Le Bol d'Air Jacquier® : Une méthode d’oxygénation naturelle pour améliorer votre vitalité</h2>
-  <p>
-    Le **Bol d'Air Jacquier®** est une méthode innovante qui permet de mieux utiliser l'oxygène de l'air pour nourrir vos cellules. 
-    Grâce à un extrait naturel de résine de pin, l’Orésine®, cette technique vous aide à améliorer votre oxygénation cellulaire, augmentant ainsi votre énergie et réduisant la fatigue chronique. Découvrez comment cette méthode peut transformer votre bien-être.
-  </p>
-  <div class="grid">
-    <div class="service-card">
-      <img src="image-principle.jpg" alt="Principe du Bol d'Air">
-      <div class="card-body">
-        <h3>Le principe du Bol d'Air Jacquier®</h3>
-        <p>
-          La méthode Bol d'Air Jacquier® ne consiste pas à inhaler plus d’oxygène, mais à aider votre corps à mieux l'assimiler. L'Orésine®, un extrait naturel de résine de pin, facilite cette assimilation, permettant une oxygénation efficace de vos cellules.
-        </p>
-      </div>
-    </div>
-    <div class="service-card">
-      <img src="image-benefits.jpg" alt="Bienfaits du Bol d'Air">
-      <div class="card-body">
-        <h3>Les Bienfaits du Bol d'Air Jacquier®</h3>
-        <p>
-          Une meilleure oxygénation vous aide à retrouver de l'énergie, améliorer votre endurance, mieux récupérer après l'effort, et renforcer vos défenses immunitaires. Parfait pour les sportifs, les personnes stressées ou en période de fatigue.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="services-grid container">
- <h2>Nos autres services de santé naturelle</h2>
- <div class="grid" style="margin-top:18px">
-   <div class="service-card"><img src="image-lumi.jpg" alt="Luminothérapie"/><div class="card-body"><h3>Luminothérapie</h3><p>Bénéficiez de la luminothérapie pour compenser le manque de lumière naturelle en hiver. S’exposer à une lampe de 10 000 lux permet de réguler le moral et le sommeil : adieu blues hivernal, fatigue intense, insomnies et baisse d’énergie. Dans mon espace zen à Nantes, les séances de luminothérapie se déroulent dans une ambiance relaxante (lumières douces, huiles essentielles, musique apaisante) pour une expérience ressourçante complète.</p></div></div>
-   <div class="service-card"><img src="image-detox.jpg" alt="Détox par les pieds"/><div class="card-body"><h3>Détox par les pieds</h3><p>Le bain de pieds détox ionique est une méthode douce et efficace pour éliminer les toxines accumulées dans votre corps. En plongeant vos pieds dans une eau légèrement salée traversée par un courant ionique, on favorise l’osmose cellulaire et l’évacuation des déchets métaboliques. C’est une aide précieuse pour vous libérer des métaux lourds, polluants et autres toxines qui surchargent l’organisme. Vous ressentez un regain d’énergie, un esprit plus clair et un corps allégé après quelques séances.</p></div></div>
-   <div class="service-card"><img src="image-sauna.jpg" alt="Sauna infrarouge"/><div class="card-body"><h3>Sauna infrarouge</h3><p>Découvrez les bienfaits du sauna infrarouge Wakan, une cabine de chaleur douce qui pénètre au cœur des tissus. La chaleur infrarouge provoque une sudation intense, ce qui aide à éliminer les toxines accumulées (métaux lourds, cholestérol, déchets) en profondeur dans l’organisme. En plus de son effet détox, le sauna infrarouge procure une relaxation intense, soulage les douleurs musculaires et articulaires, améliore la circulation sanguine et renforce le système immunitaire.</p></div></div>
- </div>
-</section>
-
-<section id="contact" class="contact container">
- <h2 class="section-title">Prendre Rendez‑vous ou nous contacter</h2>
- <p>Une question ? Envie de commencer un accompagnement bien‑être ? Contactez‑moi pour une première consultation.</p>
-  <div class="contact-info">
-    <div>
-      <h3>Téléphone</h3>
-      <p>06 07 27 46 67</p>
-    </div>
-    <div>
-      <h3>Email</h3>
-      <p><a href="mailto:contact@clairedupont44.fr">contact@clairedupont44.fr</a></p>
-    </div>
-    <div>
-      <h3>Adresse</h3>
-      <p>« Un temps pour soi m’aime »<br />26 rue Léon Say, 44000 Nantes (Loire-Atlantique)</p>
-      <p>Le cabinet se situe dans le quartier Centre-ville/Canclaux, facilement accessible en transports en commun. Parking facile à proximité.</p>
-    </div>
-  </div>
-
-  <h2 class="section-title">Formulaire de Contact</h2>
-  <div class="form-section" id="contact-form">
-    <p>Pour toute demande de renseignements ou pour prendre rendez-vous, remplissez le formulaire ci-dessous, et je vous répondrai dans les plus brefs délais.</p>
-    <form action="mailto:contact@clairedupont44.fr" method="POST" enctype="multipart/form-data">
-      <label for="name">Votre Nom</label>
-      <input type="text" id="name" name="name" required placeholder="Votre nom complet" />
-
-      <label for="email">Votre Email</label>
-      <input type="email" id="email" name="email" required placeholder="Votre adresse email" />
-
-      <label for="message">Votre Message</label>
-      <textarea id="message" name="message" rows="6" required placeholder="Votre message..."></textarea>
-
-      <button type="submit">Envoyer</button>
-    </form>
-  </div>
-</section>
-
-<footer>
- <div class="container"><p>©2025 Claire Dupont – Nantes | Mentions légales</p></div>
-</footer>
-
-<!-- Booking Modal -->
-<div class="modal" id="modal">
-  <div class="card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="close-btn" id="closeModal">✕</button>
-    <h3 id="modalTitle">Réserver une consultation</h3>
-    <form id="bookingForm">
-      <div class="field"><label for="modal-name">Nom</label><input id="modal-name" name="name" required/></div>
-      <div class="field"><label for="modal-email">Email</label><input id="modal-email" name="email" type="email" required/></div>
-      <div class="field"><label for="modal-phone">Téléphone</label><input id="modal-phone" name="phone" required/></div>
-      <div class="field"><label for="modal-message">Message / motif</label><textarea id="modal-message" name="message" rows="4"></textarea></div>
-      <div style="text-align:right"><button type="submit" class="btn-main">Envoyer la demande</button></div>
-    </form>
-  </div>
-</div>
-
-<script>
-// Modal logic
-const modal=document.getElementById('modal');
-const bookBtn=document.getElementById('bookBtn');
-const closeModal=document.getElementById('closeModal');
-bookBtn?.addEventListener('click',()=>modal.style.display='flex');
-closeModal?.addEventListener('click',()=>modal.style.display='none');
-window.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none'});
-// Simple form submit (demo)
-document.getElementById('bookingForm')?.addEventListener('submit',e=>{e.preventDefault();alert('Merci — votre demande a été envoyée.');modal.style.display='none';e.target.reset()});
-</script>
 </body>
 </html>
